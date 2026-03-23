@@ -1,0 +1,198 @@
+/* 1. RESET E CONFIGURAÇÕES GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #121212; /* Fundo Preto Premium */
+    color: #FFFFFF;
+    line-height: 1.6;
+}
+
+/* 2. CABEÇALHO (HEADER) */
+header {
+    background: #1a1a1a;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+header .logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #F59E0B; /* Dourado no Logo */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #BBBBBB;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #F59E0B;
+}
+
+/* 3. SEÇÃO PRINCIPAL (HERO) */
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    /* Gradiente sutil para profundidade */
+    background: radial-gradient(circle at center, #1e1e1e 0%, #121212 100%);
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: #FFFFFF; /* Letra branca sólida */
+    
+    /* Efeito de destaque sem usar "stroke" (evita os riscos) */
+    text-shadow: 
+        1px 1px 0px #F59E0B, 
+       -1px -1px 0px #F59E0B, 
+        1px -1px 0px #F59E0B, 
+       -1px 1px 0px #F59E0B,
+        0px 0px 10px rgba(245, 158, 11, 0.5);
+}
+
+
+.hero p {
+    font-size: 18px;
+    color: #AAAAAA;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 4. BOTÃO DE AÇÃO (CTA) */
+.cta-button {
+    background: #F59E0B; /* Dourado Vibrante */
+    color: #000000;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3);
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(245, 158, 11, 0.5);
+}
+
+/* 5. RODAPÉ (FOOTER) */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #0a0a0a;
+    color: #555555;
+    font-size: 13px;
+    border-top: 1px solid #222;
+    margin-top: 50px;
+}
+./* Configuração padrão (Celular) */
+.services {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column; /* Um embaixo do outro */
+    gap: 20px;
+    background-color: #121212;
+    max-width: 1200px; /* Limita a largura em telas gigantes */
+    margin: 0 auto;    /* Centraliza o conteúdo no PC */
+}
+
+/* REGRA PARA COMPUTADOR (Telas maiores que 768px) */
+@media (min-width: 768px) {
+    .services {
+        flex-direction: row; /* Fica um ao lado do outro */
+        justify-content: center;
+        padding: 80px 5%;
+    }
+
+    .service-card {
+        flex: 1; /* Todos os cards terão a mesma largura */
+        max-width: 350px;
+    }
+
+    .hero h1 {
+        font-size: 56px; /* Aumenta o título no PC para dar impacto */
+    }
+}
+
+
+.service-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    text-align: center;
+    transition: 0.3s;
+    <i class="fa-solid fa-pen-nib"></i>
+}
+
+.service-card h3 {
+    color: #F59E0B; /* Dourado */
+    margin-bottom: 15px;
+    font-size: 20px;
+    class="fa-solid fa-rocket"></i>
+}
+
+.service-card p {
+    color: #AAAAAA;
+    font-size: 16px;
+    <i class="fa-solid fa-mobile-screen-button"></i>
+}
+
+.service-card:hover {
+    border-color: #F59E0B;
+}
+.service-card i {
+    font-size: 40px;
+    color: #F59E0B; /* O nosso dourado */
+    margin-bottom: 20px;
+    display: block;
+}
+.service-card i {
+    font-size: 40px;
+    color: #F59E0B; /* Nosso Dourado Premium */
+    margin-bottom: 20px;
+    display: block;
+}
+/* 1. Criar o roteiro da animação (Onde começa e onde termina) */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Começa 30px abaixo */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina na posição original */
+    }
+}
+
+/* 2. Aplicar a animação nos cards de serviço */
+.service-card {
+    animation: subir 0.8s ease-out forwards;
+    opacity: 0; /* Começa invisível para a animação fazer sentido */
+}
+
+/* 3. Dar um leve atraso em cada card para eles subirem um por um (Efeito Cascata) */
+.service-card:nth-child(1) { animation-delay: 0.2s; }
+.service-card:nth-child(2) { animation-delay: 0.4s; }
+.service-card:nth-child(3) { animation-delay: 0.6s; }
+
+
